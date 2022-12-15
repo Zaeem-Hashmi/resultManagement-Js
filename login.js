@@ -4,7 +4,7 @@ let persons = [];
 let storageData = localStorage.getItem("users");
 
 if (storageData != null) {
-  persons.push(JSON.parse(storageData));
+  persons = JSON.parse(storageData);
 }
     //function to clear input
 
@@ -20,13 +20,12 @@ if (storageData != null) {
             alert("please enter values");
         }
         else if(person.name != "" || person.pass != ""){
-            persons.forEach(element => {
-                element.forEach(element1 => {
-                    if (element1.name == person.name && element1.pass == person.pass) {
-                        window.location.replace('pages/marks.html');
-                    }
-                });
-            });
+           let result = persons.filter((per)=>{
+            per.name == person.name && per.pass == person.pass
+           });
+           if (re) {
+            
+           }
         }
     }
     function login() {

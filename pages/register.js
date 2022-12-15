@@ -5,7 +5,7 @@ let persons = [];
 let storageData = localStorage.getItem("users");
 
 if (storageData != null) {
-  persons.push(JSON.parse(storageData));
+  persons = JSON.parse(storageData);
 }
 //function to clear input
 
