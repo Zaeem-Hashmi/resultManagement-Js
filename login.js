@@ -21,11 +21,9 @@ if (storageData != null) {
         }
         else if(person.name != "" || person.pass != ""){
            let result = persons.filter((per)=>{
-            per.name == person.name && per.pass == person.pass
+            return per.name == person.name && per.pass == person.pass
            });
-           if (re) {
-            
-           }
+           console.log(result);
         }
     }
     function login() {
