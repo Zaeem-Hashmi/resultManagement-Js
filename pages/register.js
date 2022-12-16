@@ -1,4 +1,4 @@
-// declear the persons arrs 
+// declear the persons arrs
 let persons = [];
 
 //get data from local storage if previouly stored.
@@ -19,10 +19,18 @@ function refactor() {
 function validator(person) {
   if (person.name == "" || person.pass == "") {
     alert("please enter values");
-  } else if (person.name != "" && person.pass != "") {
-    persons.push(person);
-    let stringarr = JSON.stringify(persons);
-    localStorage.setItem("users", stringarr);
+  } 
+  else if (person.name != "" && person.pass != "") {
+       let result = persons.filter((per) => {
+            return per.name == person.name || per.pass == person.pass;
+       });
+    if (result.length > 0) {
+      alert("user already exist");
+    } else {
+      persons.push(person);
+      let stringarr = JSON.stringify(persons);
+      localStorage.setItem("users", stringarr);
+    }
   }
 }
 function register() {
@@ -32,5 +40,4 @@ function register() {
   };
   validator(person);
   refactor();
-  console.log(persons);
 }

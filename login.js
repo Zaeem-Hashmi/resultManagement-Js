@@ -23,7 +23,14 @@ if (storageData != null) {
            let result = persons.filter((per)=>{
             return per.name == person.name && per.pass == person.pass
            });
-           console.log(result);
+           if (result.length > 0) {
+             alert("user found");
+             sessionStorage.setItem('user',result[0].name);
+             window.location.replace('pages/marks.html')
+           }
+           else{
+            alert("user not found")
+           }
         }
     }
     function login() {
