@@ -26,7 +26,12 @@ if (storageData != null) {
            if (result.length > 0) {
              alert("user found");
              sessionStorage.setItem('user',result[0].name);
-             window.location.replace('pages/marks.html')
+             if (result[0].name != "admin") {
+                 window.location.replace('pages/marks.html');
+             }
+             if(result[0].name == "admin"){
+                window.location.replace("adminPages/dashboard.html");
+             }
            }
            else{
             alert("user not found")

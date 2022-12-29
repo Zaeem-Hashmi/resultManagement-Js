@@ -2,8 +2,13 @@ let marks = [];
 if (localStorage.getItem("result") != null) {
   marks = JSON.parse(localStorage.getItem("result"));
 }
-if (sessionStorage.getItem("user") == null) {
-  window.location.replace("../login.html");
+if (sessionStorage.getItem('user') == null) {
+  window.location.replace('../login.html')
+}
+else{
+  if (sessionStorage.getItem('user') == "admin") {
+    window.location.replace('./dashboard.html');
+  }
 }
 
 let user = (document.getElementById("user").innerText =

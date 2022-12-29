@@ -1,6 +1,5 @@
 // declear the persons arrs
 let persons = [];
-
 //get data from local storage if previouly stored.
 let storageData = localStorage.getItem("users");
 
